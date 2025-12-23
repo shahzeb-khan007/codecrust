@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM keyboard events</title>
+
+
+</head>
+<body>
+    <input type="text" id="input">
+    <p id="para"></p>
+    <script>
+        var input = document.getElementById("input");
+        var para = document.getElementById("para");
+// input.addEventListener('keydown', function(event){//here keydown is an event and function is an event handler so everytime an event is triggered an object is created and passed to the event handler
+    ///now what does this object contain? this object contains information
+    // console.log(event.key)//here we can easily findout which key is responsible for triggering an event
+//     para.textContent = `key presssed${event}: ${event.target.value}`//here it is telling it go to the event.target which is an input field itself and find its value attribute 
+// });//keydown is an event which will be triggered on that input field or on that element which recieves
+//input using keyboard whenever a key is pressed. if key is pressed event will be triggered
+//as long as the key is being pressed it will trigger the event continuosly
+input.addEventListener('keyup',()=>{
+para.textContent = `key pressed:${event.target.value}`//inside the input tag which it becomes what is the value put it inside para
+
+})//key up is an event which will be triggered when a key is released
+
+
+    </script>
+</body>
+</html>

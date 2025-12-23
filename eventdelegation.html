@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li>item1 </li>
+        <li>item2</li>
+         <li>item3</li>
+          <li>item4</li>
+    </ul>
+    <script>
+        var list = document.getElementById("list");
+        list.addEventListener("click" ,function(event){
+            console.log(event.target.tagName);//so it means event.target means that particular location where from this event is being triggered
+          //whenh i click on item1 that list item becomes the target  
+if (event.target.tagName === 'li') {
+alert(`you have clicked : ${event.target.textContent}`)
+}
+        })
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="list">
+        <li id="item1">item1</li>
+         <li>item2</li>
+          <li id="item4">item4</li>
+    </ul>
+    <button onclick="fun()">remove child</button>
+    <button onclick="fun1()">click</button>
+    <script>
+        var list = document.getElementById("list")
+        let li = document.createElement("li")
+        li.textContent = "item3"
+        let item4 = document.getElementById("item4")
+        
+        list.insertBefore(li,item4)//it always recieves two arguements one is new item you want to be inserted and other is before which
+function fun(){if(list.hasChildNodes){
+    list.removeChild(list.lastChild);//if there are child nodes untill then remove child nodes
+
+}
+    // list.removeChild(item4)//with this we can remove a child
+}
+
+
+function fun1(){
+var list = document.getElementById("list");
+let h1 = document.createElement("h1")
+h1.textContent = "variable verse"
+let item1 = document.getElementById("item1")
+// list.replaceChild(h1,item1)///it means go to the parent node and replace the child node item1 with this
+list.replaceChildren(h1,item1)//it means replace the whole children replace entirely the whole innerhtml of the parent
+
+
+
+}
+
+    </script>
+</body>
+</html>

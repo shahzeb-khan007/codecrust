@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style> #grandparent{
+        height: 300px;
+        width: 300px;
+        background-color: red;
+
+    }
+    #parent{
+        height:200px;
+        width: 200px;
+        background-color: blueviolet  ;
+
+    }
+    #child{
+        height: 100px;
+        width: 100px;
+        background-color: brown;
+    }
+
+    </style>
+</head>
+<body>
+<div id="grandparent">
+    <div id="parent">
+                <button id="child" onclick="event.stopPropagation()">login
+        </button>
+
+        
+    </div>
+</div>
+<script>
+    var gparent = document.getElementById("grandparent")
+     var parent = document.getElementById("parent")
+      var child = document.getElementById("child")
+      gparent.addEventListener("click", () =>{
+        console.log("grandparent clicked") 
+      }, )///now if i want my event movement from outer to inner for that i have to pass third arguement as true it is by default false
+      ///it means make the capturing phase
+      ///its all about how my event is going to propagate is it going to propagate as bubbling phase or capturing phase
+
+      parent.addEventListener("click", ()=>{
+        console.log("parent clicked")
+      }, )
+      child.addEventListener("click", ()=>{
+        console.log("child clicked")
+      })///whats happening here is i am adding events to their respective containers but when we try to trigger the event how this event flow is going to happen?
+      //the events that i am trying to trigger are simply like a bubble like water in a bubble
+      ///once the event reaches the target element it starts moving to the root element from the inner
+// at this point of time when we see events moving this is called as bubbling phase
+///when an event is triggered it moves to two phases one is capturing the events start at root of the dom and works its way to the target element where from the element was triggered
+ ///target element to root element is called bubbling  
+ //from the root to the target is called capturing
+ //and we can stop it anywhere on that element  by using event.stop propagation()
+</script>
+
+    </body>
+</body>
+</html>

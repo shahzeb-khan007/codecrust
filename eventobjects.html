@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="btn" >clickme</button>
+    <script>
+     var btn = document.getElementById("btn")
+     btn.addEventListener('click',function(event){
+console.log(event.type);//it will tell you in console what was the type of element like here it is click
+
+console.log(event.target)//it will tell you from where this event is being triggered
+     })
+
+    </script>
+</body>
+</html>

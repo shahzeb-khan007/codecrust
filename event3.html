@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form id="my form">
+        <input type="email" id="em" placeholder="enter email">
+    <input type="text" placeholder="enter Email"><br><br>
+    <input type="password" placeholder = "enter password"><br><br>
+    <!-- <button type="submit">login1</button>
+      <button>login2</button> -->
+      <input type="submit" value = "login">
+    </form>
+    <script>
+     var form = document.getElementById("my form")//the default nature of this form submission is that it is going to refresh this entire page
+     //do we want that at this point the ans is no we want to see adfar in the console
+     //so how do we do that plz whatever your default nature is prevent that with the help of an event
+
+
+     form.addEventListener('submit', (event)=>{
+        event.preventDefault()//so it means on this event submit is going to be triggered whatever for that event its default nature is prevent that
+console.log("adfar")
+let emailval = document.getElementById("em").value
+alert(`form submitted: ${emailval}` )
+
+     })
+      
+    </script>
+</body>
+</html>
